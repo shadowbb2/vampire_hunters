@@ -1,4 +1,3 @@
-![изображение_2025-06-12_002939754](https://github.com/user-attachments/assets/5c357e76-fde6-4b5c-8fa8-c3cd2efd35c7)
 # Vampire hunters
   ## Постановка завдання
     Потрібно розробити гру "Vampire hunters" на мові програмування GDScript та за допомогою ігрового рушія GoDot.
