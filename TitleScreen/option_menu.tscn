@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=3 uid="uid://8vjx8vnepnmu"]
+
+[ext_resource type="Script" uid="uid://4lpyqrvcotk" path="res://option_menu.gd" id="1_s5pmv"]
+[ext_resource type="Script" uid="uid://c5q5aghoda4gd" path="res://audio_options.gd" id="2_fl6ph"]
+[ext_resource type="Script" uid="uid://4tpstw6ojuww" path="res://TitleScreen/button.gd" id="3_fl6ph"]
+[ext_resource type="AudioStream" uid="uid://bwahs2mtjus02" path="res://Audio/GUI/hover.wav" id="4_walxw"]
+[ext_resource type="AudioStream" uid="uid://dobpqbspunihg" path="res://Audio/GUI/click.wav" id="5_vyece"]
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchor_right = 0.658
+anchor_bottom = 0.54
+offset_right = 61.88
+offset_bottom = 47.6
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s5pmv")
+
+[node name="AudioOptions" type="Control" parent="."]
+anchors_preset = 0
+offset_top = -1.0
+offset_right = 397.0
+offset_bottom = 195.0
+script = ExtResource("2_fl6ph")
+
+[node name="ColorRect" type="ColorRect" parent="AudioOptions"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 640.0
+offset_bottom = 361.0
+color = Color(0.572549, 0.207843, 0.168627, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AudioOptions"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 589.0
+offset_bottom = 349.0
+
+[node name="Label" type="Label" parent="AudioOptions/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Загальний"
+
+[node name="MasterSlider" type="HSlider" parent="AudioOptions/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="Label2" type="Label" parent="AudioOptions/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Ефекти"
+
+[node name="SFXSlider" type="HSlider" parent="AudioOptions/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="Label3" type="Label" parent="AudioOptions/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Музика"
+
+[node name="MusicSlider" type="HSlider" parent="AudioOptions/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="btn_confirm" type="Button" parent="AudioOptions"]
+layout_mode = 0
+offset_left = 589.0
+offset_top = 311.0
+offset_right = 638.0
+offset_bottom = 359.0
+text = "Ok
+"
+script = ExtResource("3_fl6ph")
+
+[node name="snd_hover" type="AudioStreamPlayer" parent="AudioOptions/btn_confirm"]
+stream = ExtResource("4_walxw")
+bus = &"SFX"
+
+[node name="snd_click" type="AudioStreamPlayer" parent="AudioOptions/btn_confirm"]
+stream = ExtResource("5_vyece")
+bus = &"SFX"
+
+[connection signal="mouse_exited" from="AudioOptions/VBoxContainer/MasterSlider" to="AudioOptions" method="_on_master_slider_mouse_exited"]
+[connection signal="mouse_exited" from="AudioOptions/VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_mouse_exited"]
+[connection signal="mouse_exited" from="AudioOptions/VBoxContainer/SFXSlider" to="AudioOptions" method="_on_sfx_slider_mouse_exited"]
+[connection signal="mouse_exited" from="AudioOptions/VBoxContainer/MusicSlider" to="AudioOptions" method="_on_music_slider_mouse_exited"]
+[connection signal="button_down" from="AudioOptions/btn_confirm" to="AudioOptions" method="_on_btn_confirm_button_down"]
+[connection signal="mouse_entered" from="AudioOptions/btn_confirm" to="AudioOptions/btn_confirm" method="_on_mouse_entered"]
+[connection signal="pressed" from="AudioOptions/btn_confirm" to="AudioOptions/btn_confirm" method="_on_pressed"]

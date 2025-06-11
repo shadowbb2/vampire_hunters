@@ -1,0 +1,14 @@
+AudioStreamPlayer
+Button
+CanvasLayer
+ColorRect
+AnimationPlayer
+VBoxContainer
+PanelContainer
+Label
+HSlider
+Control
+Sprite2D
+GridContainer
+TextureRect
+TextureProgressBar
