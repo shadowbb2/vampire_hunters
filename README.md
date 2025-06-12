@@ -1,4 +1,8 @@
 # Vampire hunters
+## Захоплива гра схожа на Vampire Survivors у жанрі RogueLite та BulletHell 
+![image](https://github.com/user-attachments/assets/a8254aae-5baa-42a0-8c29-55aca82e8faa)
+![image](https://github.com/user-attachments/assets/9e64550d-379b-4247-833e-c75017728c1c)
+
   ## Постановка завдання
     Потрібно розробити гру "Vampire hunters" на мові програмування GDScript та за допомогою ігрового рушія GoDot.
     Гра повинна підтримувати одного гравця який може керувати рухами ігрового персонажа поки той вбиває монстрівю
